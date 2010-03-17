@@ -3,7 +3,7 @@ require "yaml"
 require 'highline/import'
 require 'authenticate_ldap'
 
-def get_user(prompt="Enter your Active Directory email name (e.g. hank.beaver) for Primedia Domain")
+def get_user(prompt="Enter your Active Directory email name (e.g. hank.beaver) for Domain")
    ask(prompt) {|q| q.echo = true}
 end
 
@@ -13,7 +13,7 @@ end
 
 @config = YAML.load_file( 'ldap.yml' )
  
-@ldap_auth = AuthenticateAds.new(get_user,get_password,@config['ldap']['host'],@config['ldap']['base_dn'],@config['ldap']['search_filter_attr']
+@ldap_auth = AuthenticateLdap.new(get_user,get_password,@config['ldap']['host'],@config['ldap']['base_dn'],@config['ldap']['search_filter_attr']
 ) 
 
 puts "Checking for membership of #{@config['ldap']['member_of_group']}:"

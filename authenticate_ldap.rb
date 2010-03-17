@@ -4,7 +4,7 @@ require "net/ldap"  #this is http://github.com/RoryO/ruby-net-ldap
 # This client was created to augment other examples and libraries that exist that authenicate well, but do not check group membership as well. 
 # Has been tested against Active Directory Services, have not tested against other LDAP servers.  
 
-class AuthenticateAds
+class AuthenticateLdap
   attr_accessor :ldap_conn, :username, :password, :adshost, :base_dn_arr, :base_dn,:search_filter_attr,:member_of_group,:treebase
 
   #create a constructor which takes all relevant parameters and saves them
