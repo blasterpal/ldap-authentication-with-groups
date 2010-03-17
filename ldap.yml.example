@@ -1,0 +1,5 @@
+ldap:
+  host: 'host1.corp.server.com' 
+  base_dn:  "corp.server.com" # this is used to split out for LDAP call as well in dc=corp,dc=server format
+  search_filter_attr: 'sAMAccountName' #userPrincipleName was tested and did not work with AD
+  member_of_group: 'CN=Developers,CN=Groups,OU=Products,DC=corp,DC=server,DC=com'
